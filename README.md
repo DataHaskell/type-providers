@@ -1,11 +1,11 @@
-# Type providers for Haskell: plans and shared interfaces
+# [Type providers](https://docs.microsoft.com/en-us/dotnet/fsharp/tutorials/type-providers/) for Haskell
 
 # Plans
 
 The most pressing needs are currently:
 1. Write XML type provider using [`XML Schema`](https://www.w3schools.com/xml/xml_schema.asp) -
 [Michal](mailto:mjgajda@gmail.com) is willing to mentor a student.
-2. Support more flat types in `Frames` and `json-autotype`.
+2. Support more flat types in [`Frames`](http://acowley.github.io/Frames/) and [`json-autotype`](https://hackage.haskell.org/package/json-autotype).
 3. Make SQL type provider.
 
 Long term goals:
@@ -14,5 +14,5 @@ Long term goals:
 
 # Shared interfaces
 
-Anthony Cowley of `Frames` and Michal Gajda of `json-autotype` agreed to join the recognition of flat types,
-so that it can be shared between `Frames`, `json-autotype` and other `type-providers`.
+Anthony Cowley of [`Frames`](http://acowley.github.io/Frames/)  and Michal Gajda of [`json-autotype`](https://hackage.haskell.org/package/json-autotype) agreed to join the recognition of flat types,
+so that it can be shared between [`Frames`](http://acowley.github.io/Frames/) , [`json-autotype`]((https://hackage.haskell.org/package/json-autotype)) and other `type-providers`.
