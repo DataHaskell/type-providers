@@ -12,6 +12,9 @@ Long term goals:
 * Type provider for Servant types for whole WebAPIs
 * Automatic detection of filetype, and parsing it using your favourite Haskell library.
 
+_You may apply for Google Summer of Code projects._
+_We are also looking for other ways of mentoring students to help us with this project._
+
 # Shared interfaces
 
 Anthony Cowley of [`Frames`](http://acowley.github.io/Frames/)  and Michal Gajda of [`json-autotype`](https://hackage.haskell.org/package/json-autotype) agreed to join the recognition of flat types,
