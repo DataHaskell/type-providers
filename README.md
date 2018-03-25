@@ -1,5 +1,7 @@
 # [Type providers](https://docs.microsoft.com/en-us/dotnet/fsharp/tutorials/type-providers/) for Haskell
 
+[![Join the chat at https://gitter.im/dataHaskell/type-providers](https://badges.gitter.im/dataHaskell/type-providers.svg)](https://gitter.im/dataHaskell/type-providers?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## Plans
 
 The most pressing needs are currently:
