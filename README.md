@@ -1,5 +1,7 @@
 # [Type providers](https://docs.microsoft.com/en-us/dotnet/fsharp/tutorials/type-providers/) for Haskell
 
+[![Join the chat at https://gitter.im/dataHaskell/type-providers](https://badges.gitter.im/dataHaskell/type-providers.svg)](https://gitter.im/dataHaskell/type-providers?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## Plans
 
 The most pressing needs are currently:
@@ -44,7 +46,17 @@ I am contacting authors about their UUXML attempt, but it seems that is defunct 
 Ideally we could use [Selda](https://hackage.haskell.org/package/selda-0.1.12.1/docs/Database-Selda-Generic.html) and generate record types for each table to start with.
 We just need a interoperable SQL library that allows to query table types (like ODBC).
 
-## API
+# Usage of meta-type-provider
+
+```sh
+$ type-these input/*
+```
+Then see Haskell modules made to read your data in `input/` directory.
+
+Currently need to add new providers to `type-it` script.
+[WIP:]This script will be generated automagically.
+
+## Package API
 
 Before we make `.cabal` accept `type-provider` target, we can use fixed path:
 1. Compile `executable` named `./type-provider`.
