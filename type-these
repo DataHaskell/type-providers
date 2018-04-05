@@ -1,0 +1,3 @@
+#!/bin/bash
+
+find ${1:-.} -exec './type-it' '{}' ';'

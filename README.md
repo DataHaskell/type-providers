@@ -43,3 +43,11 @@ I am contacting authors about their UUXML attempt, but it seems that is defunct 
 
 Ideally we could use [Selda](https://hackage.haskell.org/package/selda-0.1.12.1/docs/Database-Selda-Generic.html) and generate record types for each table to start with.
 We just need a interoperable SQL library that allows to query table types (like ODBC).
+
+## API
+
+Before we make `.cabal` accept `type-provider` target, we can use fixed path:
+1. Compile `executable` named `./type-provider`.
+2. Register package by sending to `mjgajda@gmail.com`
+3. [WIP] We make type-providers.haskell.org to upload data on type providers.
+4. [WIP] Container that has type providers preinstalled.

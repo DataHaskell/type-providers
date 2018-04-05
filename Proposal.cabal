@@ -1,0 +1,6 @@
+executable cli
+
+type-provider TypeProvider.hs
+  mime-types: text/plain
+  extensions: *.xlsx
+
