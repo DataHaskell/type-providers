@@ -1,40 +1,35 @@
 #!/bin/bash
 
 for filename in $*; do
-  case $(file --mime-type ${filename}) in
-    text/plain) cat - <<EOF
-import qualified Data.Text
+  outfile=`basename $filename`.hs
+  case ${filename} in
+    README.md) cat - >$outfile <<EOF
+import qualified Data.Text.IO
 
-readData = Data.Text.readFile "$i"
+readData = Data.Text.IO.readFile "$filename"
 
 main = readData >>= print
 EOF
 ;;
-    text/csv) cat - <<EOF
-{-# LANGUAGE DataKinds, FlexibleContexts, QuasiQuotes, TemplateHaskell #-}
+    Prestige.csv) cat -  >$outfile<<EOF
+{-# LANGUAGE DataKinds, FlexibleContexts, QuasiQuotes, TemplateHaskell, StandaloneDeriving #-}
 -- build-dependency: Frames
 import Frames
 
 -- Data set from http://vincentarelbundock.github.io/Rdatasets/datasets.html
 tableTypes "Row" "$filename"
 
+-- deriving instance Show Row
+
 readData :: IO (Frame Row)
 readData = inCoreAoS (readTable "$filename")
+
+main = readData >>= print
 EOF
 ;;
-    text/json) cat -<<EOF
-{-# LANGUAGE DataKinds, FlexibleContexts, QuasiQuotes, TemplateHaskell #-}
--- build-dependency: Frames
-import Frames
-
--- Data set from http://vincentarelbundock.github.io/Rdatasets/datasets.html
-tableTypes "Row" "$filename"
-
-readData :: IO (Frame Row)
-readData = inCoreAoS (readTable "$filename")
-EOF
+    elm-package.json) echo json-autotype --no-test -o $outfile $filename
 ;;
   *) echo "Do not know how to handle $filename of `file --mime-type $filename`"
 ;;
-esac > $(basename $filename).hs;
+esac
 done;
