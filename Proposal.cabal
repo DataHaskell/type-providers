@@ -1,6 +1,7 @@
 executable cli
 
-type-provider TypeProvider.hs
+type-provider ExcelTypeProvider.hs
   mime-types: text/plain
-  extensions: *.xlsx
+  glob: *.xlsx
+
 
