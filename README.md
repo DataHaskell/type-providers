@@ -61,5 +61,31 @@ Currently need to add new providers to `type-it` script.
 Before we make `.cabal` accept `type-provider` target, we can use fixed path:
 1. Compile `executable` named `./type-provider`.
 2. Register package by sending to `mjgajda@gmail.com`
-3. [WIP] We make type-providers.haskell.org to upload data on type providers.
-4. [WIP] Container that has type providers preinstalled.
+3. Get PR to accept the type provider to build as type-providers dependency.
+4. [WIP] We make type-providers.haskell.org to upload data on type providers.
+5. [WIP] Container that has type providers preinstalled.
+
+### Type provider executable
+
+Type provider executable should accept the following arguments:
+* `-o` _filename_ - output module name
+* `-m` _modulename_ - output Haskell module name
+* _inputname_ - filepath to the file or directory matching the pattern
+
+First thing that type provider does should be to detect whether file matches the pattern.
+
+Question: do we also need a library option to detect if file might be
+handled? (If so, contact me.)
+
+### Proposal for `.cabal` extension
+
+Instead of building normal executable, we would mark it `type-provider`:
+```
+type-provider ExcelTypeProvider.hs
+  mime-types: text/plain
+  glob: *.xlsx
+```
+It can *either* have a list of glob patterns for matching file and directory names,
+*or* have mime-types for matching MIME type (warning: MIME type matching may work differently
+on different operating systems!).
+

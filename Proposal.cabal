@@ -1,7 +1,0 @@
-executable cli
-
-type-provider ExcelTypeProvider.hs
-  mime-types: text/plain
-  glob: *.xlsx
-
-
