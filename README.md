@@ -70,12 +70,16 @@ Before we make `.cabal` accept `type-provider` target, we can use fixed path:
 Type provider executable should accept the following arguments:
 * `-o` _filename_ - output module name
 * `-m` _modulename_ - output Haskell module name
-* _inputname_ - filepath to the file or directory matching the pattern
+* _inputname_ - filepath to the file or directory matching the pattern, we read the input file *as-is* `readInput :: FilePath -> IO `_InputType_
 
 First thing that type provider does should be to detect whether file matches the pattern.
 
 Question: do we also need a library option to detect if file might be
 handled? (If so, contact me.)
+
+Standard exit codes:
+* 0 - success, file handled by type provider, subdirectories pruned
+* 2 - file unhandled
 
 ### Proposal for `.cabal` extension
 
